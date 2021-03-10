@@ -14,13 +14,13 @@ class PriorBox(object):
     def __init__(self, cfg , min_size, max_size):
         super(PriorBox, self).__init__()
         self.image_size = cfg['min_dim']
+        self.steps = cfg['steps']
         self.feature_maps = [[ceil(self.image_size[0]/step), ceil(self.image_size[1]/step)] for step in self.steps]
         # number of priors for feature map location (either 4 or 6)
         self.num_priors = len(cfg['aspect_ratios'])
         self.variance = cfg['variance'] or [0.1]
         self.min_sizes = min_size
         self.max_sizes = max_size
-        self.steps = cfg['steps']
         self.aspect_ratios = cfg['aspect_ratios']
         self.clip = cfg['clip']
         self.version = cfg['name']
