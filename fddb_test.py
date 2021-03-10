@@ -19,14 +19,14 @@ from PIL import Image
 from scipy.misc import imread, imresize, imsave, imshow
 from torch.autograd import Variable
 
-from data import *
-from data import BaseTransform, TestBaseTransform
-from data import WIDERFace_CLASSES as labelmap
-from data import (WIDERFace_ROOT, WIDERFaceAnnotationTransform,
+from .data import *
+from .data import BaseTransform, TestBaseTransform
+from .data import WIDERFace_CLASSES as labelmap
+from .data import (WIDERFace_ROOT, WIDERFaceAnnotationTransform,
                   WIDERFaceDetection)
-from face_ssd import build_ssd
-from utils import draw_toolbox
-from widerface_val import (bbox_vote, detect_face, multi_scale_test,
+from .face_ssd import build_ssd
+from .utils import draw_toolbox
+from .widerface_val import (bbox_vote, detect_face, multi_scale_test,
                            multi_scale_test_pyramid)
 
 #plt.switch_backend('agg')

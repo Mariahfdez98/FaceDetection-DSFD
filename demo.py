@@ -19,13 +19,13 @@ import torchvision.transforms as transforms
 from PIL import Image
 from torch.autograd import Variable
 
-from data import *
-from data import BaseTransform, TestBaseTransform
-from data import WIDERFace_CLASSES as labelmap
-from data import (WIDERFace_ROOT, WIDERFaceAnnotationTransform,
+from .data import *
+from .data import BaseTransform, TestBaseTransform
+from .data import WIDERFace_CLASSES as labelmap
+from .data import (WIDERFace_ROOT, WIDERFaceAnnotationTransform,
                   WIDERFaceDetection)
-from face_ssd import build_ssd
-from widerface_val import bbox_vote
+from .face_ssd import build_ssd
+from .widerface_val import bbox_vote
 
 plt.switch_backend('agg')
 

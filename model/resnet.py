@@ -9,7 +9,7 @@ import torch.nn.functional as F
 import torch.utils.model_zoo as model_zoo
 from torch.autograd import Variable
 
-from model.fpn.fpn import _FPN
+from model.fpn import _FPN
 from model.utils.config import cfg
 
 __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
