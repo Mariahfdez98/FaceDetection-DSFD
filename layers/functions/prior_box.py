@@ -2,7 +2,7 @@ from __future__ import division
 
 import pdb
 from itertools import product as product
-from math import sqrt as sqrt
+from math import sqrt as sqrt, ceil
 
 import torch
 
@@ -14,7 +14,7 @@ class PriorBox(object):
     def __init__(self, cfg , min_size, max_size):
         super(PriorBox, self).__init__()
         self.image_size = cfg['min_dim']
-        self.feature_maps = cfg['feature_maps']
+        self.feature_maps = [[ceil(self.image_size[0]/step), ceil(self.image_size[1]/step)] for step in self.steps]
         # number of priors for feature map location (either 4 or 6)
         self.num_priors = len(cfg['aspect_ratios'])
         self.variance = cfg['variance'] or [0.1]
